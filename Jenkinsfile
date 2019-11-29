@@ -8,7 +8,7 @@ pipeline {
             }
             stage("restore") {
                 steps {
-                    sh 'dotnet restore'
+                    sh 'sh restore.sh'
                 }
             }
             stage('Build') {
