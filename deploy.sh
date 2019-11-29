@@ -5,7 +5,7 @@ rsync -avz -e 'ssh' dist/ deploy@nuc:/home/deploy/apps/backgarden
 
 if [ $? -ne 0 ]
 then
-  printf "Error copying files!
+  printf "Error copying files!"
   return 1
 fi
 
