@@ -8,17 +8,17 @@ pipeline {
             }
             stage("restore") {
                 steps {
-                    sh label: '', script: 'restore.sh'
+                    sh 'dotnet restore'
                 }
             }
             stage('Build') {
                 steps {
-                    sh label: '', script: 'build.sh'
+                    sh 'build.sh'
                 }
             }
             stage('Test') {
                 steps {
-                    sh label: '', script: 'test.sh'
+                    sh 'test.sh'
                 }
             }
         }
