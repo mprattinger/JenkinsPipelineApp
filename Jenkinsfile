@@ -24,10 +24,9 @@ pipeline {
     }
     post {
         failure {
-            emailext
-            body: '${SCRIPT, template="groovy_html.template"}',
-            subject: currentBuild.currentResult + " : " + env.JOB_NAME,
-            to: 'mprattinger@outlook.com'
+            def emailBody = '${SCRIPT, template="regressionfailed.groovy"}'
+            def emailSubject = "${env.JOB_NAME} - Build# ${env.BUILD_NUMBER} - ${env.BUILD_STATUS}"
+            emailext(mimeType: 'text/html', replyTo: 'xxxx', subject: emailSubject, to: 'xxxx', body: emailBody)
         }
     }
 }
