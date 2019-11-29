@@ -24,8 +24,7 @@ pipeline {
     }
     post {
         failure {
-            env.ForEmailPlugin = env.WORKSPACE
-            emailext attachmentsPattern: 'TestResults\\*.trx',
+            emailext
             body: '''${SCRIPT, template="groovy_html.template"}''',
             subject: currentBuild.currentResult + " : " + env.JOB_NAME,
             to: 'mprattinger@outlook.com'
