@@ -23,6 +23,9 @@ pipeline {
         }
     }
     post {
+        success {
+            echo "Success!"
+        }
         failure {
             step([$class: 'Mailer', recipients: emailextrecipients([[$class: 'CulpritsRecipientProvider']])])
         }
