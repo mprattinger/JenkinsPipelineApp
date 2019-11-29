@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage("checkout") {
             steps {
-                git 'https://github.com/mprattinger/JenkinsPipelineApp.git'
+                git credentialsId: 'mprattinger_github', url: 'https://github.com/mprattinger/JenkinsPipelineApp.git'
             }
         }
         stage("restore") {
