@@ -24,7 +24,7 @@ pipeline {
     }
     post {
         failure {
-            step([$class: 'Mailer', recipients: emailextrecipients([[$class: 'CulpritsRecipientProvider'], [$class: 'RequesterRecipientProvider']])])
+            step([$class: 'Mailer', recipients: emailextrecipients([[$class: 'RecipientsRecipientProvider']])])
         }
     }
 }
