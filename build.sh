@@ -1,3 +1,4 @@
 #!/bin/bash
-
-dotnet build --configuration Release -o dist
+cd JenkinsPipelineApp
+dotnet build --configuration Release -o ../dist
+cd ..

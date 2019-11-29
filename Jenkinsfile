@@ -21,6 +21,11 @@ pipeline {
                 sh 'sh test.sh'
             }
         }
+        stage('deploy') {
+            steps {
+                sh 'sh deploy.sh'
+            }
+        }
     }
     post {
         success {
