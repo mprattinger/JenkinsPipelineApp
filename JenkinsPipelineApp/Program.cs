@@ -1,12 +1,17 @@
 ﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace JenkinsPipelineApp
 {
     class Program
     {
-        static void Main(string[] args)
+        static int Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Starting...");
+            Thread.Sleep(5000);
+            Console.WriteLine("Done");
+            return 0;
         }
     }
 }
