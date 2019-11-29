@@ -25,7 +25,7 @@ pipeline {
     post {
         failure {
             emailext
-            body: '''${SCRIPT, template="groovy_html.template"}''',
+            body: ${SCRIPT, template="groovy_html.template"},
             subject: currentBuild.currentResult + " : " + env.JOB_NAME,
             to: 'mprattinger@outlook.com'
         }
