@@ -10,7 +10,7 @@ namespace JenkinsPipelineApp.Tests
         public void Test1()
         {
             //testing ztz
-            true.Should().BeFalse();
+            true.Should().BeTrue();
         }
     }
 }
